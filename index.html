@@ -1,721 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Profile · [Your Name]</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eyuel Woldesenbet · Senior Civil Engineer</title>
 
-    <!-- ============================================================
-    FONTS & ICONS
-    ============================================================ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- ============================================================
+  FONTS & ICONS
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-    <style>
-        /* ============================================================
-           RESET & BASE
-           ============================================================ */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    /* ============================================================
+       RESET & BASE (same professional style)
+       ============================================================ */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        :root {
-            /* ─── COLORS (change these to match your brand) ─── */
-            --color-bg: #f8fafc;
-            --color-surface: #ffffff;
-            --color-primary: #2563eb;
-            --color-primary-light: #3b82f6;
-            --color-primary-dark: #1d4ed8;
-            --color-text: #0f172a;
-            --color-text-secondary: #475569;
-            --color-text-muted: #94a3b8;
-            --color-border: #e2e8f0;
-            --color-shadow: rgba(15, 23, 42, 0.08);
-            --color-shadow-hover: rgba(15, 23, 42, 0.16);
+    :root {
+      --color-bg: #f1f5f9;
+      --color-surface: #ffffff;
+      --color-primary: #0b4f6c;
+      --color-primary-light: #1a6d8f;
+      --color-primary-dark: #083a4f;
+      --color-text: #0b1e2b;
+      --color-text-secondary: #2c3e50;
+      --color-text-muted: #6b7f8f;
+      --color-border: #dce4ec;
+      --color-shadow: rgba(11, 30, 43, 0.08);
+      --color-shadow-hover: rgba(11, 30, 43, 0.16);
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 0.25s ease;
+      --section-gap: 2.5rem;
+    }
 
-            /* ─── TYPOGRAPHY ─── */
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --radius: 16px;
-            --radius-sm: 10px;
-            --transition: 0.25s ease;
+    html {
+      scroll-behavior: smooth;
+    }
 
-            /* ─── SPACING ─── */
-            --section-gap: 3rem;
-        }
+    body {
+      font-family: var(--font-family);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    /* ============================================================
+       MAIN CARD
+       ============================================================ */
+    .profile-card {
+      max-width: 1200px;
+      width: 100%;
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px var(--color-shadow);
+      overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
 
-        body {
-            font-family: var(--font-family);
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-            padding: 2rem 1.5rem;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .profile-card:hover {
+      box-shadow: 0 30px 80px var(--color-shadow-hover);
+    }
 
-        /* ============================================================
-           MAIN CARD
-           ============================================================ */
-        .profile-card {
-            max-width: 1100px;
-            width: 100%;
-            background: var(--color-surface);
-            border-radius: var(--radius);
-            box-shadow: 0 20px 60px var(--color-shadow);
-            overflow: hidden;
-            transition: box-shadow var(--transition);
-        }
+    .profile-inner {
+      display: grid;
+      grid-template-columns: 1fr 2.4fr;
+      gap: 0;
+    }
 
-        .profile-card:hover {
-            box-shadow: 0 30px 80px var(--color-shadow-hover);
-        }
+    /* ============================================================
+       SIDEBAR (left column)
+       ============================================================ */
+    .sidebar {
+      background: linear-gradient(145deg, #e8edf2, #dce3ea);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-right: 1px solid var(--color-border);
+    }
 
-        .profile-inner {
-            display: grid;
-            grid-template-columns: 1fr 2.2fr;
-            gap: 0;
-        }
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.6rem;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(11, 79, 108, 0.30);
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+      user-select: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
 
-        /* ============================================================
-           SIDEBAR (left column)
-           ============================================================ */
-        .sidebar {
-            background: linear-gradient(145deg, #f1f5f9, #e9edf4);
-            padding: 2.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            border-right: 1px solid var(--color-border);
-        }
+    .avatar:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 32px rgba(11, 79, 108, 0.40);
+    }
 
-        /* ─── Avatar ─── */
-        .avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4.2rem;
-            font-weight: 700;
-            color: #fff;
-            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.30);
-            margin-bottom: 1.25rem;
-            flex-shrink: 0;
-            user-select: none;
-            transition: transform var(--transition), box-shadow var(--transition);
-        }
+    .sidebar-name {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      line-height: 1.2;
+    }
 
-        .avatar:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.40);
-        }
+    .sidebar-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      background: rgba(11, 79, 108, 0.10);
+      padding: 0.2rem 1.2rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+    }
 
-        /* ─── Name & title ─── */
-        .sidebar-name {
-            font-size: 1.7rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: var(--color-text);
-            line-height: 1.2;
-        }
+    .divider {
+      width: 50px;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 10px;
+      margin: 0.5rem auto 1.25rem;
+      opacity: 0.5;
+    }
 
-        .sidebar-title {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--color-primary);
-            background: rgba(37, 99, 235, 0.10);
-            padding: 0.2rem 1rem;
-            border-radius: 50px;
-            display: inline-block;
-            margin-top: 0.25rem;
-            margin-bottom: 1rem;
-        }
+    .sidebar-bio {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      max-width: 260px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
 
-        /* ─── Divider ─── */
-        .divider {
-            width: 50px;
-            height: 3px;
-            background: var(--color-primary);
-            border-radius: 10px;
-            margin: 0.75rem auto 1.25rem;
-            opacity: 0.6;
-        }
+    .contact-list {
+      list-style: none;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto 1.75rem;
+      text-align: left;
+    }
 
-        /* ─── Sidebar bio ─── */
-        .sidebar-bio {
-            font-size: 0.92rem;
-            color: var(--color-text-secondary);
-            max-width: 240px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.7;
-        }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition);
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+    }
 
-        /* ─── Contact info (sidebar) ─── */
-        .contact-list {
-            list-style: none;
-            width: 100%;
-            max-width: 260px;
-            margin: 0 auto 1.75rem;
-            text-align: left;
-        }
+    .contact-list li:hover {
+      background: rgba(11, 79, 108, 0.06);
+    }
 
-        .contact-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            padding: 0.5rem 0.75rem;
-            border-radius: var(--radius-sm);
-            transition: background var(--transition);
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-        }
+    .contact-list i {
+      width: 20px;
+      color: var(--color-primary);
+      font-size: 0.95rem;
+      text-align: center;
+    }
 
-        .contact-list li:hover {
-            background: rgba(37, 99, 235, 0.06);
-        }
+    .contact-list a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color var(--transition);
+      word-break: break-all;
+    }
 
-        .contact-list i {
-            width: 20px;
-            color: var(--color-primary);
-            font-size: 1rem;
-            text-align: center;
-        }
+    .contact-list a:hover {
+      color: var(--color-primary);
+    }
 
-        .contact-list a {
-            color: var(--color-text-secondary);
-            text-decoration: none;
-            transition: color var(--transition);
-            word-break: break-all;
-        }
+    .social-row {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
 
-        .contact-list a:hover {
-            color: var(--color-primary);
-        }
+    .social-row a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      color: var(--color-text-secondary);
+      font-size: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all var(--transition);
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+    }
 
-        /* ─── Social icons ─── */
-        .social-row {
-            display: flex;
-            gap: 0.9rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 0.5rem;
-        }
+    .social-row a:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(11, 79, 108, 0.25);
+    }
 
-        .social-row a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--color-surface);
-            color: var(--color-text-secondary);
-            font-size: 1.2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            transition: all var(--transition);
-            text-decoration: none;
-            border: 1px solid var(--color-border);
-        }
+    /* ============================================================
+       MAIN CONTENT (right column)
+       ============================================================ */
+    .main-content {
+      padding: 2.5rem 2.8rem 2.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--section-gap);
+    }
 
-        .social-row a:hover {
-            background: var(--color-primary);
-            color: #fff;
-            border-color: var(--color-primary);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-        }
+    .section-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
 
-        /* ============================================================
-           MAIN CONTENT (right column)
-           ============================================================ */
-        .main-content {
-            padding: 2.5rem 2.8rem 2.8rem;
-            display: flex;
-            flex-direction: column;
-            gap: var(--section-gap);
-        }
+    .section-heading i {
+      color: var(--color-primary);
+      font-size: 1rem;
+    }
 
-        /* ─── Section headings ─── */
-        .section-heading {
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: 0.01em;
-            text-transform: uppercase;
-            color: var(--color-text-muted);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
+    .about-text {
+      font-size: 0.98rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
 
-        .section-heading i {
-            color: var(--color-primary);
-            font-size: 1rem;
-        }
+    .about-text strong {
+      color: var(--color-text);
+    }
 
-        /* ─── About ─── */
-        .about-text {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            line-height: 1.8;
-            max-width: 620px;
-        }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.6rem;
+    }
 
-        .about-text strong {
-            color: var(--color-text);
-        }
+    .skill-tag {
+      background: var(--color-bg);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-align: center;
+      border: 1px solid var(--color-border);
+      transition: all var(--transition);
+      cursor: default;
+    }
 
-        /* ─── Skills grid ─── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 0.75rem;
-        }
+    .skill-tag:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(11, 79, 108, 0.20);
+    }
 
-        .skill-tag {
-            background: var(--color-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--color-text-secondary);
-            text-align: center;
-            border: 1px solid var(--color-border);
-            transition: all var(--transition);
-            cursor: default;
-        }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-        .skill-tag:hover {
-            background: var(--color-primary);
-            color: #fff;
-            border-color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.20);
-        }
+    .timeline-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
 
-        /* ─── Experience / timeline ─── */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      min-width: 12px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      margin-top: 0.4rem;
+      box-shadow: 0 0 0 4px rgba(11, 79, 108, 0.12);
+    }
 
-        .timeline-item {
-            display: flex;
-            gap: 1.25rem;
-            align-items: flex-start;
-        }
+    .timeline-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
 
-        .timeline-dot {
-            width: 12px;
-            height: 12px;
-            min-width: 12px;
-            border-radius: 50%;
-            background: var(--color-primary);
-            margin-top: 0.4rem;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
-        }
+    .timeline-content .meta {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      margin-bottom: 0.1rem;
+    }
 
-        .timeline-content h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--color-text);
-        }
+    .timeline-content .date {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
 
-        .timeline-content .meta {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--color-primary);
-            margin-bottom: 0.15rem;
-        }
+    .timeline-content p {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-top: 0.2rem;
+    }
 
-        .timeline-content .date {
-            font-size: 0.8rem;
-            color: var(--color-text-muted);
-            margin-bottom: 0.3rem;
-        }
+    .timeline-content ul {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      padding-left: 1.2rem;
+      margin-top: 0.2rem;
+      line-height: 1.6;
+      list-style: disc;
+    }
 
-        .timeline-content p {
-            font-size: 0.92rem;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-        }
+    .timeline-content ul li {
+      margin-bottom: 0.2rem;
+    }
 
-        /* ─── Education ─── */
-        .edu-item {
-            display: flex;
-            gap: 1.25rem;
-            align-items: flex-start;
-        }
+    .edu-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
 
-        .edu-icon {
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
-            border-radius: var(--radius-sm);
-            background: var(--color-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-primary);
-            font-size: 1.2rem;
-            border: 1px solid var(--color-border);
-        }
+    .edu-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-size: 1.2rem;
+      border: 1px solid var(--color-border);
+    }
 
-        .edu-details h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--color-text);
-        }
+    .edu-details h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
 
-        .edu-details .school {
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-        }
+    .edu-details .school {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+    }
 
-        .edu-details .year {
-            font-size: 0.8rem;
-            color: var(--color-text-muted);
-        }
+    .edu-details .year {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
 
-        /* ============================================================
-           PLACEHOLDER LABELS (visual hints for replacement)
-           ============================================================ */
-        .placeholder-hint {
-            position: relative;
-        }
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 820px) {
+      .profile-inner {
+        grid-template-columns: 1fr;
+      }
 
-        /* subtle dotted underline on placeholder elements */
-        .ph {
-            border-bottom: 2px dotted rgba(37, 99, 235, 0.25);
-            padding-bottom: 0.05rem;
-            transition: border-color var(--transition);
-            cursor: text;
-        }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding: 2rem 1.5rem;
+      }
 
-        .ph:hover {
-            border-color: var(--color-primary);
-        }
+      .main-content {
+        padding: 2rem 1.5rem;
+      }
 
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
-        @media (max-width: 820px) {
-            .profile-inner {
-                grid-template-columns: 1fr;
-            }
+      .avatar {
+        width: 110px;
+        height: 110px;
+        font-size: 2.8rem;
+      }
 
-            .sidebar {
-                border-right: none;
-                border-bottom: 1px solid var(--color-border);
-                padding: 2rem 1.5rem;
-            }
+      .sidebar-name {
+        font-size: 1.4rem;
+      }
 
-            .main-content {
-                padding: 2rem 1.5rem;
-            }
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+    }
 
-            .avatar {
-                width: 110px;
-                height: 110px;
-                font-size: 3.2rem;
-            }
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
 
-            .sidebar-name {
-                font-size: 1.5rem;
-            }
+      .main-content {
+        padding: 1.5rem 1rem;
+      }
 
-            .contact-list {
-                max-width: 100%;
-            }
+      .sidebar {
+        padding: 1.5rem 1rem;
+      }
 
-            .skills-grid {
-                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-            }
-        }
+      .timeline-item {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 1rem 0.75rem;
-            }
+      .timeline-dot {
+        display: none;
+      }
 
-            .main-content {
-                padding: 1.5rem 1rem;
-            }
+      .edu-item {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
 
-            .sidebar {
-                padding: 1.5rem 1rem;
-            }
+    /* small footer */
+    .footer-note {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      border-top: 1px solid var(--color-border);
+      padding-top: 1.5rem;
+      text-align: center;
+    }
 
-            .timeline-item {
-                flex-direction: column;
-                gap: 0.3rem;
-            }
-
-            .timeline-dot {
-                display: none;
-            }
-
-            .edu-item {
-                flex-direction: column;
-                gap: 0.3rem;
-            }
-        }
-
-        /* ============================================================
-           UTILITY
-           ============================================================ */
-        .mt-1 {
-            margin-top: 0.5rem;
-        }
-        .mb-1 {
-            margin-bottom: 0.5rem;
-        }
-        .gap-1 {
-            gap: 0.5rem;
-        }
-        .flex-wrap {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .items-center {
-            align-items: center;
-        }
-    </style>
+    .footer-note i {
+      color: var(--color-primary);
+    }
+  </style>
 </head>
 <body>
 
-    <div class="profile-card">
+  <div class="profile-card">
+    <div class="profile-inner">
 
-        <div class="profile-inner">
+      <!-- ============================================================
+      SIDEBAR
+      ============================================================ -->
+      <aside class="sidebar">
 
-            <!-- ============================================================
-            SIDEBAR
-            ============================================================ -->
-            <aside class="sidebar">
+        <div class="avatar" aria-label="Profile photo">
+          <span>EW</span>
+        </div>
 
-                <!-- ─── AVATAR ─── -->
-                <div class="avatar" aria-label="Profile photo">
-                    <!-- Replace the text below with your initials or an <img> tag -->
-                    <span class="ph" title="Replace with your initials or image">JD</span>
-                </div>
+        <h1 class="sidebar-name">Eyuel Woldesenbet</h1>
+        <span class="sidebar-title">Senior Civil Engineer</span>
+        <div class="divider"></div>
 
-                <!-- ─── NAME ─── -->
-                <h1 class="sidebar-name ph" title="Replace with your full name">
-                    Jane Doe
-                </h1>
+        <p class="sidebar-bio">
+          Senior Civil Engineer with 10 years of experience in construction supervision and remote consulting.
+        </p>
 
-                <!-- ─── TITLE ─── -->
-                <span class="sidebar-title ph" title="Replace with your professional title">
-                    Senior Product Designer
-                </span>
+        <ul class="contact-list">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Addis Ababa, Ethiopia</span>
+          </li>
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <span>+251 94 240 4882</span>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:eyueltekle@gmail.com">eyueltekle@gmail.com</a>
+          </li>
+          <li>
+            <i class="fas fa-globe"></i>
+            <span>eyueltw.com</span>
+          </li>
+        </ul>
 
-                <div class="divider"></div>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
 
-                <!-- ─── SHORT BIO ─── -->
-                <p class="sidebar-bio ph" title="Replace with a short bio">
-                    Designing human-centered digital experiences with a passion for simplicity and impact.
-                </p>
+      </aside>
 
-                <!-- ─── CONTACT LIST ─── -->
-                <ul class="contact-list">
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:jane@example.com" class="ph" title="Replace email">jane@example.com</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone-alt"></i>
-                        <span class="ph" title="Replace phone number">+1 (555) 000-0000</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span class="ph" title="Replace location">San Francisco, CA</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-globe"></i>
-                        <a href="#" class="ph" title="Replace website URL">jane.design</a>
-                    </li>
+      <!-- ============================================================
+      MAIN CONTENT
+      ============================================================ -->
+      <main class="main-content">
+
+        <!-- ─── SUMMARY ─── -->
+        <section>
+          <div class="section-heading">
+            <i class="fas fa-user"></i> Professional Summary
+          </div>
+          <p class="about-text">
+            <strong>Senior Civil Engineer</strong> with 10 years of experience spanning on-site construction supervision
+            in Ethiopia and remote civil engineering consulting for United States-based construction and design firms.
+            Skilled in project scheduling, quality control, quantity surveying, and payment certification on active
+            construction sites, combined with technical drafting, hydraulic analysis, and procurement support delivered
+            to international clients. Proficient in AutoCAD, SAP, ETABS, MS Project, and Google Earth Pro-based site
+            analysis. Known for disciplined quality assurance, clear technical communication across teams and time
+            zones, and dependable delivery against project schedules.
+          </p>
+        </section>
+
+        <!-- ─── CORE COMPETENCIES ─── -->
+        <section>
+          <div class="section-heading">
+            <i class="fas fa-tasks"></i> Core Competencies
+          </div>
+          <div class="skills-grid">
+            <span class="skill-tag">Construction Supervision</span>
+            <span class="skill-tag">Quality Control</span>
+            <span class="skill-tag">Project Planning</span>
+            <span class="skill-tag">Technical Drafting</span>
+            <span class="skill-tag">AutoCAD</span>
+            <span class="skill-tag">SAP / ETABS</span>
+            <span class="skill-tag">MS Project</span>
+            <span class="skill-tag">Google Earth Pro</span>
+            <span class="skill-tag">Quantity Surveying</span>
+            <span class="skill-tag">Procurement Support</span>
+            <span class="skill-tag">RFI Management</span>
+            <span class="skill-tag">Remote Site Analysis</span>
+          </div>
+        </section>
+
+        <!-- ─── EXPERIENCE ─── -->
+        <section>
+          <div class="section-heading">
+            <i class="fas fa-briefcase"></i> Professional Experience
+          </div>
+          <div class="timeline">
+
+            <!-- 1. Remote Civil Engineering Consultant -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Remote Civil Engineering Consultant</h4>
+                <div class="meta">Stern Gutters — United States</div>
+                <div class="date">July 2025 – Present</div>
+                <ul>
+                  <li>Perform high-precision remote measurements and quantity takeoffs using Google Earth Pro for stormwater and gutter system design.</li>
+                  <li>Translate satellite-derived site data into structured engineering reports and material schedules within strict 12-hour SLAs.</li>
+                  <li>Maintain under 1% error margins through dual-verification quality process.</li>
+                  <li>Authored a Standard Operating Procedure (SOP) for virtual site assessment.</li>
                 </ul>
+              </div>
+            </div>
 
-                <!-- ─── SOCIAL LINKS ─── -->
-                <div class="social-row">
-                    <a href="#" aria-label="GitHub" class="ph" title="Replace GitHub URL"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn" class="ph" title="Replace LinkedIn URL"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Twitter" class="ph" title="Replace Twitter URL"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="YouTube" class="ph" title="Replace YouTube URL"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Instagram" class="ph" title="Replace Instagram URL"><i class="fab fa-instagram"></i></a>
-                </div>
+            <!-- 2. Remote Civil Engineering Coordinator -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Remote Civil Engineering Coordinator</h4>
+                <div class="meta">Plan Z Designs — United States</div>
+                <div class="date">November 2024 – January 2026</div>
+                <ul>
+                  <li>Served as technical liaison between design principal, CAD designers, and clients.</li>
+                  <li>Conducted technical bid evaluations and prepared comparative scope-of-work documentation.</li>
+                  <li>Reviewed consultant shop drawings in AutoCAD for dimensional accuracy and specification compliance.</li>
+                  <li>Assembled technical proposals and maintained project databases tracking milestones and change orders.</li>
+                </ul>
+              </div>
+            </div>
 
-            </aside>
+            <!-- 3. Senior Construction Engineer -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Senior Construction Engineer</h4>
+                <div class="meta">ABM Construction Plc — Addis Ababa, Ethiopia</div>
+                <div class="date">January 2021 – November 2024</div>
+                <ul>
+                  <li>Defined project objectives, scope, budgeting, scheduling, and performance requirements.</li>
+                  <li>Maximized efficient use of labor, materials, and equipment through aligned procurement.</li>
+                  <li>Coordinated planning, design, estimating, contracting, and construction activities.</li>
+                </ul>
+              </div>
+            </div>
 
-            <!-- ============================================================
-            MAIN CONTENT
-            ============================================================ -->
-            <main class="main-content">
+            <!-- 4. Junior Engineer -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Junior Engineer</h4>
+                <div class="meta">Sagnif General Contractor — Addis Ababa, Ethiopia</div>
+                <div class="date">September 2015 – October 2020</div>
+                <ul>
+                  <li>Monitored on-site work progress against the approved schedule and verified workforce output.</li>
+                  <li>Reviewed and approved completed work quantities for payment certification.</li>
+                  <li>Inspected work items for compliance with specified construction methodology and quality standards.</li>
+                </ul>
+              </div>
+            </div>
 
-                <!-- ─── ABOUT ─── -->
-                <section>
-                    <div class="section-heading">
-                        <i class="fas fa-user"></i> About
-                    </div>
-                    <p class="about-text ph" title="Replace with your about text">
-                        <strong>Hello, I'm Jane.</strong> I'm a product designer with 8+ years of experience
-                        crafting digital products that people love. I believe in the power of thoughtful design
-                        to solve real problems. Currently leading design at <strong>Studio X</strong>, where I
-                        mentor a team of 6 and drive product strategy from concept to launch.
-                    </p>
-                </section>
+          </div>
+        </section>
 
-                <!-- ─── SKILLS ─── -->
-                <section>
-                    <div class="section-heading">
-                        <i class="fas fa-code"></i> Skills &amp; Tools
-                    </div>
-                    <div class="skills-grid ph" title="Replace each skill with your own">
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Sketch</span>
-                        <span class="skill-tag">Adobe XD</span>
-                        <span class="skill-tag">UI/UX</span>
-                        <span class="skill-tag">Prototyping</span>
-                        <span class="skill-tag">User Research</span>
-                        <span class="skill-tag">Design Systems</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Tailwind</span>
-                        <span class="skill-tag">Framer</span>
-                        <span class="skill-tag">Leadership</span>
-                    </div>
-                </section>
+        <!-- ─── EDUCATION ─── -->
+        <section>
+          <div class="section-heading">
+            <i class="fas fa-graduation-cap"></i> Education
+          </div>
 
-                <!-- ─── EXPERIENCE ─── -->
-                <section>
-                    <div class="section-heading">
-                        <i class="fas fa-briefcase"></i> Experience
-                    </div>
-                    <div class="timeline ph" title="Replace each experience with your own">
+          <div class="edu-item">
+            <div class="edu-icon"><i class="fas fa-university"></i></div>
+            <div class="edu-details">
+              <h4>BSc, Civil Engineering</h4>
+              <div class="school">Addis Ababa University</div>
+              <div class="year">September 2009 – July 2014</div>
+            </div>
+          </div>
 
-                        <!-- Item 1 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Senior Product Designer</h4>
-                                <div class="meta">Studio X · Full-time</div>
-                                <div class="date">2022 – Present</div>
-                                <p>Leading design for 3 core products. Increased user engagement by 34% through a
-                                complete design system overhaul.</p>
-                            </div>
-                        </div>
+          <div class="edu-item" style="margin-top:1rem;">
+            <div class="edu-icon"><i class="fas fa-certificate"></i></div>
+            <div class="edu-details">
+              <h4>Certificate, Software Engineering</h4>
+              <div class="school">ALX Africa</div>
+              <div class="year">February 2022 – February 2023</div>
+            </div>
+          </div>
+        </section>
 
-                        <!-- Item 2 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Product Designer</h4>
-                                <div class="meta">DesignLab · Full-time</div>
-                                <div class="date">2019 – 2022</div>
-                                <p>Designed and shipped 12+ features for a SaaS platform used by 50k+ monthly users.
-                                Owned the end-to-end design process.</p>
-                            </div>
-                        </div>
+        <!-- ─── TECHNICAL SKILLS & LANGUAGES ─── -->
+        <section>
+          <div class="section-heading">
+            <i class="fas fa-code"></i> Technical Skills &amp; Languages
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex:1; min-width:160px;">
+              <p style="font-weight:600; font-size:0.9rem; color:var(--color-text); margin-bottom:0.3rem;">
+                <i class="fas fa-laptop" style="color:var(--color-primary); width:20px;"></i> Engineering Software
+              </p>
+              <p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.6;">
+                AutoCAD, SAP, ETABS, MS Project, Google Earth Pro
+              </p>
+              <p style="font-weight:600; font-size:0.9rem; color:var(--color-text); margin-top:0.8rem; margin-bottom:0.3rem;">
+                <i class="fas fa-file-alt" style="color:var(--color-primary); width:20px;"></i> Office &amp; Productivity
+              </p>
+              <p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.6;">
+                MS-Office, Google Workspace
+              </p>
+              <p style="font-weight:600; font-size:0.9rem; color:var(--color-text); margin-top:0.8rem; margin-bottom:0.3rem;">
+                <i class="fas fa-code" style="color:var(--color-primary); width:20px;"></i> Programming
+              </p>
+              <p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.6;">
+                JavaScript
+              </p>
+              <p style="font-weight:600; font-size:0.9rem; color:var(--color-text); margin-top:0.8rem; margin-bottom:0.3rem;">
+                <i class="fas fa-book" style="color:var(--color-primary); width:20px;"></i> Standards
+              </p>
+              <p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.6;">
+                Familiarity with US building codes (IBC/IRC)
+              </p>
+            </div>
+            <div style="flex:1; min-width:140px;">
+              <p style="font-weight:600; font-size:0.9rem; color:var(--color-text); margin-bottom:0.3rem;">
+                <i class="fas fa-language" style="color:var(--color-primary); width:20px;"></i> Languages
+              </p>
+              <p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.8;">
+                <strong>English</strong> — Professional fluency<br />
+                <strong>Amharic</strong> — Native
+              </p>
+            </div>
+          </div>
+        </section>
 
-                        <!-- Item 3 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Junior Designer</h4>
-                                <div class="meta">Creative Agency · Full-time</div>
-                                <div class="date">2017 – 2019</div>
-                                <p>Collaborated with cross-functional teams to deliver responsive web designs for
-                                clients in fintech and healthcare.</p>
-                            </div>
-                        </div>
+        <!-- ─── FOOTER ─── -->
+        <div class="footer-note">
+          <i class="fas fa-hard-hat"></i> &nbsp; Built with precision — open to opportunities
+        </div>
 
-                    </div>
-                </section>
+      </main>
 
-                <!-- ─── EDUCATION ─── -->
-                <section>
-                    <div class="section-heading">
-                        <i class="fas fa-graduation-cap"></i> Education
-                    </div>
-
-                    <div class="edu-item ph" title="Replace with your education details">
-                        <div class="edu-icon"><i class="fas fa-university"></i></div>
-                        <div class="edu-details">
-                            <h4>B.S. in Interaction Design</h4>
-                            <div class="school">California Institute of Design</div>
-                            <div class="year">2013 – 2017 · GPA 3.9</div>
-                        </div>
-                    </div>
-
-                    <!-- optional second edu entry – uncomment if needed -->
-                    <!--
-                    <div class="edu-item ph" style="margin-top:1rem;" title="Replace with your education details">
-                      <div class="edu-icon"><i class="fas fa-certificate"></i></div>
-                      <div class="edu-details">
-                        <h4>UX Design Certificate</h4>
-                        <div class="school">General Assembly</div>
-                        <div class="year">2016</div>
-                      </div>
-                    </div>
-                    -->
-                </section>
-
-                <!-- ─── FOOTER NOTE (optional) ─── -->
-                <div style="margin-top:0.5rem; font-size:0.8rem; color:var(--color-text-muted); border-top:1px solid var(--color-border); padding-top:1.5rem; text-align:center;">
-                    <i class="fas fa-pen-fancy" style="color:var(--color-primary);"></i>
-                    <span class="ph" title="Replace this footer text if you like">
-                        &nbsp; Crafted with &#9829; · Open to opportunities
-                    </span>
-                </div>
-
-            </main>
-
-        </div><!-- /profile-inner -->
-
-    </div><!-- /profile-card -->
-
-    <!-- ============================================================
-    SMALL SCRIPT – just to highlight placeholders on click (optional)
-    ============================================================ -->
-    <script>
-        (function() {
-            // Add a subtle "copy hint" when a placeholder is clicked.
-            const placeholders = document.querySelectorAll('.ph');
-            placeholders.forEach(el => {
-                el.addEventListener('click', function(e) {
-                    // Only if text is selected, let that happen naturally.
-                    // Otherwise just a tiny feedback.
-                    const selection = window.getSelection();
-                    if (selection.toString().length > 0) return;
-
-                    // Brief flash to indicate "edit me"
-                    this.style.transition = 'background 0.15s';
-                    this.style.background = 'rgba(37,99,235,0.08)';
-                    setTimeout(() => {
-                        this.style.background = 'transparent';
-                    }, 300);
-                });
-            });
-
-            console.log('✨ Personal Profile ready — replace any .ph content!');
-        })();
-    </script>
+    </div><!-- /profile-inner -->
+  </div><!-- /profile-card -->
 
 </body>
 </html>
