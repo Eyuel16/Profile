@@ -96,27 +96,29 @@
       border-right: 1px solid var(--color-border);
     }
 
+    /* ─── AVATAR / PROFILE PICTURE ─── */
     .avatar {
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.6rem;
-      font-weight: 700;
-      color: #fff;
+      overflow: hidden;
       box-shadow: 0 8px 24px rgba(11, 79, 108, 0.30);
       margin-bottom: 1.25rem;
       flex-shrink: 0;
-      user-select: none;
       transition: transform var(--transition), box-shadow var(--transition);
+      border: 3px solid var(--color-surface);
     }
 
     .avatar:hover {
       transform: scale(1.03);
       box-shadow: 0 12px 32px rgba(11, 79, 108, 0.40);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .sidebar-name {
@@ -441,7 +443,6 @@
       .avatar {
         width: 110px;
         height: 110px;
-        font-size: 2.8rem;
       }
 
       .sidebar-name {
@@ -484,6 +485,11 @@
         padding: 0.6rem 1.4rem;
         font-size: 0.8rem;
       }
+
+      .avatar {
+        width: 90px;
+        height: 90px;
+      }
     }
   </style>
 </head>
@@ -497,10 +503,11 @@
       ============================================================ -->
       <aside class="sidebar">
 
+        <!-- ─── PROFILE PICTURE ─── -->
         <div class="avatar" aria-label="Profile photo of Eyuel Woldesenbet">
-          <img src="Profile_pic.jpg" alt="Eyuel Woldesenbet - Senior Civil Engineer" />
+          <img src="profile_pic.jpg" alt="Eyuel Woldesenbet - Senior Civil Engineer" />
         </div>
-        
+
         <h1 class="sidebar-name">Eyuel Woldesenbet</h1>
         <span class="sidebar-title">Senior Civil Engineer</span>
         <div class="divider"></div>
@@ -529,15 +536,6 @@
         </ul>
 
         <!-- ─── DOWNLOAD CV BUTTON ─── -->
-        <!-- 
-          ⚠️ IMPORTANT: Replace "Eyuel_Woldesenbet_CV.pdf" with the actual path to your PDF file.
-          
-          If you upload the PDF to the same folder as this HTML file, just use the filename.
-          Example: <a href="Eyuel_Woldesenbet_CV.pdf" class="download-btn" download>
-          
-          If you host it elsewhere (Google Drive, Dropbox, etc.), paste the full URL.
-          Example: <a href="https://your-link.com/cv.pdf" class="download-btn" target="_blank">
-        -->
         <a href="Eyuel_Woldesenbet_CV.pdf" class="download-btn" download>
           <i class="fas fa-file-pdf"></i> Download CV
         </a>
