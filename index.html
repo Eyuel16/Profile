@@ -160,7 +160,7 @@
       list-style: none;
       width: 100%;
       max-width: 280px;
-      margin: 0 auto 1.75rem;
+      margin: 0 auto 1.25rem;
       text-align: left;
     }
 
@@ -197,12 +197,42 @@
       color: var(--color-primary);
     }
 
+    /* ─── DOWNLOAD CV BUTTON ─── */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition);
+      box-shadow: 0 4px 14px rgba(11, 79, 108, 0.25);
+      margin-top: 0.25rem;
+      margin-bottom: 1.25rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .download-btn:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(11, 79, 108, 0.35);
+    }
+
+    .download-btn i {
+      font-size: 1rem;
+    }
+
     .social-row {
       display: flex;
       gap: 0.9rem;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 0.5rem;
+      margin-top: 0.25rem;
     }
 
     .social-row a {
@@ -449,6 +479,11 @@
         flex-direction: column;
         gap: 0.2rem;
       }
+
+      .download-btn {
+        padding: 0.6rem 1.4rem;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -492,6 +527,11 @@
             <span>eyueltw.com</span>
           </li>
         </ul>
+
+        <!-- ─── DOWNLOAD CV BUTTON ─── -->
+        <a href="#" class="download-btn" download>
+          <i class="fas fa-file-pdf"></i> Download CV
+        </a>
 
         <div class="social-row">
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
